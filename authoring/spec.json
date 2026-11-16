@@ -1,6 +1,6 @@
 {
   "name": "holdem-rules",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "title": "Hold'em rules",
   "description": "Texas hold'em for a table engine: the game-rules interface turn-engine drives (round, phase, act, step, outcome, observation, records, views, prompt) as an adapter over a hand state machine that moves every chip through the chip ledger; plus the betting controls' amount model.",
   "facilities": [
@@ -134,10 +134,10 @@
     "java": "26.0.1"
   },
   "platforms": [
-    "server",
-    "web",
+    "android",
     "apple",
-    "android"
+    "server",
+    "web"
   ],
   "text": {
     "purpose": "Texas hold'em as the game-rules interface a turn engine drives, over a hand state machine. `createGameRules({ranking, ledger, deck, schedule, rules?})` provides `optionNames`, `newRound`, `phase`, `parseMove`, `act`, `defaultMove`, `step`, `outcome`, `voidRound`, `observation`, `records`, `publicView`, `legal` and `prompt`, exactly as turn-engine declares them. A round is `{hand, autoSteps}`; the engine's chip ledger goes in and comes back on every call, and every chip moves through chip-ledger operations (`commit`, `fold`, `endRound`, `returnUncalled`, `buildPots`, `awardPot`, `settle`, `voidHand`), so the ledger's `sidePots`, `oddChipRule` and `minimumUnit` settings decide the pots and amounts. `newRound` draws a shuffled deck from card-deck, reads the blinds from level-schedule, moves the button from the carry it returned last time (dead button, heads-up swap), deals, posts blinds (a short stack posts what it has) and finds the first actor. `phase` says who acts (with the settle plus the time to deal cards), or that the table deals the board by itself (3 s between cards), or that the round is over. `act` checks turn, stage and amount, handles short all-in raises (a short raise reopens the betting only when short raises add up to a full one) and goes on to the next actor, street, runout or settlement. `outcome` gives how long to hold the result (6 s when nobody showed down, 22 s a showdown, 27 s when a kicker decided, 42 s for a draw) and a history entry with the winners. `observation` is poker-strategy's DecisionInput; `records` are the hole cards for private-views; `legal` is all false when paused. The hand state machine (`createHoldem`: `newHand`, `legalActions`, `apply`, `autoAction`, `runoutStep`, `settle`, `voidHand`, `view`, `stacks`, `chipsInPlay`, `parseAction`, `attachLedger`) is the lower layer. Client side, `implementation/web|apple|android` hold the betting controls' amount model (step, quick amounts, nudging, all-in detection) with no screen code.",
@@ -167,5 +167,186 @@
       }
     ],
     "notes": "Pure library. No hosted service, account or provider limit applies. A full random game of nine players plays in well under a millisecond per action on the build machine."
+  },
+  "classes": [
+    {
+      "reference": {
+        "name": "ourapps-ae/holdem-rules-class",
+        "version": "1.0.0",
+        "digest": "7a375c0788c911aa41a68147c1425a3e5ee0b719f0763e7e0a1b53cb1d741d49"
+      },
+      "descriptor": {
+        "format": 1,
+        "name": "ourapps-ae/holdem-rules-class",
+        "version": "1.0.0",
+        "provides": [
+          {
+            "type": "ae/game-rules",
+            "version": "1.0.0",
+            "path": "classes/holdem-rules-class/game-rules.json",
+            "modules": {
+              "web": [
+                "web/index.ts"
+              ],
+              "server": [
+                "server/index.ts"
+              ],
+              "android": [
+                "android/src/main/java"
+              ],
+              "ios": [
+                "apple/Sources"
+              ],
+              "macos": [
+                "apple/Sources"
+              ],
+              "tvos": [
+                "apple/Sources"
+              ],
+              "windows": [
+                "web/index.ts"
+              ]
+            }
+          }
+        ],
+        "requires": [
+          {
+            "type": "ae/card-deck",
+            "version": "1.0.0"
+          },
+          {
+            "type": "ae/chip-ledger",
+            "version": "1.0.0"
+          },
+          {
+            "type": "ae/level-schedule",
+            "version": "1.0.0"
+          },
+          {
+            "type": "ae/hand-ranking",
+            "version": "1.0.0"
+          },
+          {
+            "type": "ae/rules-settings",
+            "version": "1.0.0"
+          }
+        ],
+        "settings": {
+          "type": "object",
+          "properties": {
+            "revealAtRunout": {
+              "type": "boolean"
+            },
+            "seats": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "revealAtRunout",
+            "seats"
+          ],
+          "additionalProperties": false
+        },
+        "inventory": [
+          {
+            "path": "classes/holdem-rules-class/check.mjs",
+            "digest": "eb2b8265e6c5b96a027ed00ea396eeeec9fb37c33735d4c28726721666cee453"
+          },
+          {
+            "path": "classes/holdem-rules-class/game-rules.json",
+            "digest": "a52a0fc94e63c45e902cd98a36adb424d21a571ed2c805c4741156baa721336a"
+          },
+          {
+            "path": "classes/holdem-rules-class/ledger.mjs",
+            "digest": "cba61ff0fe61ae821ecf8c0886f7591000ad275509420758c363a4bf7f559595"
+          },
+          {
+            "path": "classes/holdem-rules-class/runtime.mjs",
+            "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+          }
+        ],
+        "verification": [
+          {
+            "id": "shared",
+            "root": "package",
+            "argv": [
+              "node",
+              "classes/holdem-rules-class/check.mjs"
+            ],
+            "cwd": ".",
+            "prepare": [],
+            "tools": {
+              "node": "26.5"
+            },
+            "fixtures": [
+              "classes/holdem-rules-class/check.mjs"
+            ],
+            "locks": [],
+            "network": false,
+            "timeoutSeconds": 60,
+            "expectedExit": 0,
+            "scope": "required-local",
+            "requirements": []
+          }
+        ]
+      }
+    }
+  ],
+  "implements": [
+    {
+      "name": "ourapps-ae/holdem-rules-class",
+      "version": "1.0.0",
+      "digest": "7a375c0788c911aa41a68147c1425a3e5ee0b719f0763e7e0a1b53cb1d741d49"
+    }
+  ],
+  "upstream": [],
+  "compatibility": {
+    "runtimes": {
+      "node": ">=26.5.0 <27.0.0",
+      "swift": "=6.4.2",
+      "ios": ">=17.0.0",
+      "macos": ">=14.0.0",
+      "tvos": ">=17.0.0",
+      "kotlin": "=2.3.20",
+      "java": ">=17.0.0 <27.0.0",
+      "android": ">=8.0.0"
+    },
+    "frameworks": {},
+    "dependencies": [],
+    "styles": {
+      "scope": "none",
+      "namespaces": [],
+      "conflicts": []
+    }
+  },
+  "maintenance": {
+    "owners": [
+      "Level N Ltd"
+    ],
+    "contact": "https://github.com/ourapps-ae/holdem-rules/issues",
+    "repository": "https://github.com/ourapps-ae/holdem-rules",
+    "updates": {
+      "source": "https://github.com/ourapps-ae/holdem-rules/releases",
+      "strategy": "manual"
+    }
+  },
+  "supportedPlatforms": [
+    "android",
+    "ios",
+    "macos",
+    "server",
+    "tvos",
+    "web",
+    "windows"
+  ],
+  "licence": "Apache-2.0",
+  "licenceFile": "LICENCE",
+  "noticeFile": "NOTICE",
+  "templates": [],
+  "modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts",
+    "android": "android/src/main/java",
+    "apple": "apple/Sources"
   }
 }
