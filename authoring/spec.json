@@ -1,6 +1,6 @@
 {
   "name": "holdem-rules",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "title": "Hold'em rules",
   "description": "Texas hold'em for a table engine: the game-rules interface turn-engine drives (round, phase, act, step, outcome, observation, records, views, prompt) as an adapter over a hand state machine that moves every chip through the chip ledger; plus the betting controls' amount model.",
   "facilities": [
@@ -172,13 +172,17 @@
     {
       "reference": {
         "name": "ourapps-ae/holdem-rules-class",
-        "version": "1.0.0",
-        "digest": "7a375c0788c911aa41a68147c1425a3e5ee0b719f0763e7e0a1b53cb1d741d49"
+        "version": "1.1.0",
+        "digest": "f232a215f6a21ad08cc2890052a641695f770ae855fcb40b964ca23d17503f74"
       },
       "descriptor": {
-        "format": 1,
+        "format": 2,
         "name": "ourapps-ae/holdem-rules-class",
-        "version": "1.0.0",
+        "version": "1.1.0",
+        "title": "Texas hold'em rules",
+        "summary": "Blinds, betting rounds, legal actions and showdown for Texas hold'em",
+        "category": "games/cards/poker",
+        "presentation": "none",
         "provides": [
           {
             "type": "ae/game-rules",
@@ -295,8 +299,8 @@
   "implements": [
     {
       "name": "ourapps-ae/holdem-rules-class",
-      "version": "1.0.0",
-      "digest": "7a375c0788c911aa41a68147c1425a3e5ee0b719f0763e7e0a1b53cb1d741d49"
+      "version": "1.1.0",
+      "digest": "f232a215f6a21ad08cc2890052a641695f770ae855fcb40b964ca23d17503f74"
     }
   ],
   "upstream": [],
@@ -307,7 +311,7 @@
       "ios": ">=17.0.0",
       "macos": ">=14.0.0",
       "tvos": ">=17.0.0",
-      "kotlin": "=2.3.20",
+      "kotlin": "=2.4.21",
       "java": ">=17.0.0 <27.0.0",
       "android": ">=8.0.0"
     },
@@ -582,5 +586,11 @@
         "manual": "Without the package manager, install Node 26 from nodejs.org (the installer, or the zip or tar archive with its folder put first on PATH); on Linux also from the NodeSource repository."
       }
     ]
-  }
+  },
+  "release": {
+    "channel": "features",
+    "fixes": []
+  },
+  "images": [],
+  "vulnerabilityWaivers": []
 }
