@@ -1,8 +1,8 @@
 {
   "name": "holdem-rules",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "title": "Hold'em rules",
-  "description": "Texas hold'em for a table engine: the game-rules interface turn-engine drives (round, phase, act, step, outcome, observation, records, views, prompt) as an adapter over a hand state machine that moves every chip through the chip ledger; plus the betting controls' amount model.",
+  "description": "The rules of Texas hold'em poker for a turn-engine table: dealing, blinds, whose turn it is, legal bets and raises, side pots and winners, with every chip moved through chip-ledger; plus the betting controls' amount model.",
   "facilities": [
     {
       "id": "game-rules",
