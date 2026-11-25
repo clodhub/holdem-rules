@@ -1,10 +1,10 @@
 {
-  "id": "ourapps-ae.holdem-rules",
+  "id": "clodhub.holdem-rules",
   "name": "Hold'em rules",
   "kind": "component",
   "status": "example",
-  "package": "ourapps-ae/holdem-rules",
-  "version": "0.10.0",
+  "package": "clodhub/holdem-rules",
+  "version": "0.11.0",
   "ports": [
     {
       "id": "card-deck",

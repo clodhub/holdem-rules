@@ -1,6 +1,6 @@
 {
   "name": "holdem-rules",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "title": "Hold'em rules",
   "description": "The rules of Texas hold'em poker for a turn-engine table: dealing, blinds, whose turn it is, legal bets and raises, side pots and winners, with every chip moved through chip-ledger; plus the betting controls' amount model.",
   "facilities": [
@@ -87,7 +87,7 @@
         "tests/web.test.ts"
       ],
       "tools": {
-        "node": "26.5.0"
+        "node": "26.5"
       }
     },
     {
@@ -99,8 +99,8 @@
       ],
       "scope": "platform",
       "tools": {
-        "python3": "3.12.8",
-        "swiftc": "6.4.2"
+        "python3": "3.12",
+        "swiftc": "6.4"
       },
       "fixtures": [
         "tests/apple/main.swift",
@@ -116,9 +116,9 @@
       ],
       "scope": "platform",
       "tools": {
-        "python3": "3.12.8",
-        "kotlinc": "2.2.0",
-        "java": "26.0.1"
+        "java": "26.0",
+        "kotlinc": "2.2",
+        "python3": "3.12"
       },
       "fixtures": [
         "tests/android/Main.kt",
@@ -127,11 +127,11 @@
     }
   ],
   "tools": {
-    "node": "26.5.0",
-    "python3": "3.12.8",
-    "swiftc": "6.4.2",
-    "kotlinc": "2.2.0",
-    "java": "26.0.1"
+    "node": "26.5",
+    "python3": "3.12",
+    "swiftc": "6.4",
+    "kotlinc": "2.2",
+    "java": "26.0"
   },
   "platforms": [
     "android",
@@ -171,13 +171,13 @@
   "classes": [
     {
       "reference": {
-        "name": "ourapps-ae/holdem-rules-class",
+        "name": "clodhub/holdem-rules-class",
         "version": "1.1.0",
-        "digest": "f232a215f6a21ad08cc2890052a641695f770ae855fcb40b964ca23d17503f74"
+        "digest": "4268206fe55b9b3fed57a5c3d9631421be8d2c86ec05275113c6569b33253fd0"
       },
       "descriptor": {
         "format": 2,
-        "name": "ourapps-ae/holdem-rules-class",
+        "name": "clodhub/holdem-rules-class",
         "version": "1.1.0",
         "title": "Texas hold'em rules",
         "summary": "Blinds, betting rounds, legal actions and showdown for Texas hold'em",
@@ -258,7 +258,7 @@
           },
           {
             "path": "classes/holdem-rules-class/game-rules.json",
-            "digest": "a52a0fc94e63c45e902cd98a36adb424d21a571ed2c805c4741156baa721336a"
+            "digest": "07a150814abc9f8cfdc8331fd3c0e3cc2710f7e935bc99fac47d2e8c6c285d29"
           },
           {
             "path": "classes/holdem-rules-class/ledger.mjs",
@@ -298,9 +298,9 @@
   ],
   "implements": [
     {
-      "name": "ourapps-ae/holdem-rules-class",
+      "name": "clodhub/holdem-rules-class",
       "version": "1.1.0",
-      "digest": "f232a215f6a21ad08cc2890052a641695f770ae855fcb40b964ca23d17503f74"
+      "digest": "4268206fe55b9b3fed57a5c3d9631421be8d2c86ec05275113c6569b33253fd0"
     }
   ],
   "upstream": [],
@@ -327,10 +327,10 @@
     "owners": [
       "Level N Ltd"
     ],
-    "contact": "https://github.com/ourapps-ae/holdem-rules/issues",
-    "repository": "https://github.com/ourapps-ae/holdem-rules",
+    "contact": "https://github.com/clodhub/holdem-rules/issues",
+    "repository": "https://github.com/clodhub/holdem-rules",
     "updates": {
-      "source": "https://github.com/ourapps-ae/holdem-rules/releases",
+      "source": "https://github.com/clodhub/holdem-rules/releases",
       "strategy": "manual"
     }
   },
