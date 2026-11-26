@@ -1,4 +1,4 @@
-// The game-rules interface a turn engine drives (ae/game-rules 1.0.0), for Texas hold'em: an adapter over
+// The game-rules interface a turn engine drives (com.clodhub/game-rules 1.0.0), for Texas hold'em: an adapter over
 // the hand state machine in holdem.ts. A round is { hand, autoSteps }; chips live in the chip ledger the
 // engine passes in and gets back on every call; the deck comes from card-deck, the blinds from
 // level-schedule, optional table rules from rules-settings. Every operation is pure and JSON-safe.
@@ -39,7 +39,7 @@ export type HiddenRecord = {
 
 export type Moved = { ok: true; round: Round; ledger: Ledger } | { ok: false; code: MoveCode };
 
-// What poker-strategy's `decide` takes (ae/player-strategy 1.0.0 DecisionInput), without `style`.
+// What poker-strategy's `decide` takes (com.clodhub/player-strategy 1.0.0 DecisionInput), without `style`.
 export type DecisionInput = {
   hole: Card[];
   board: Card[];

@@ -1,17 +1,17 @@
 {
-  "id": "clodhub.holdem-rules",
+  "id": "com.clodhub.holdem-rules",
   "name": "Hold'em rules",
   "kind": "component",
   "status": "example",
-  "package": "clodhub/holdem-rules",
-  "version": "0.11.0",
+  "package": "pkg:clod/com.clodhub/holdem-rules",
+  "version": "0.12.0",
   "ports": [
     {
       "id": "card-deck",
       "name": "Card deck",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/card-deck",
+      "type": "com.clodhub/card-deck",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -21,7 +21,7 @@
       "name": "Chip ledger",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/chip-ledger",
+      "type": "com.clodhub/chip-ledger",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -31,7 +31,7 @@
       "name": "Level schedule",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/level-schedule",
+      "type": "com.clodhub/level-schedule",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -41,7 +41,7 @@
       "name": "Hand ranking",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/hand-ranking",
+      "type": "com.clodhub/hand-ranking",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -51,7 +51,7 @@
       "name": "Rules settings",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/rules-settings",
+      "type": "com.clodhub/rules-settings",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -61,7 +61,7 @@
       "name": "Game rules",
       "direction": "output",
       "kind": "interface",
-      "type": "ae/game-rules",
+      "type": "com.clodhub/game-rules",
       "version": "1.0.0"
     }
   ],

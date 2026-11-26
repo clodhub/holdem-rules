@@ -3,17 +3,17 @@
 ## For the agent
 Select this component for any Texas hold'em recipe. Connect hand-ranking to poker-hand-ranking, card-deck to card-deck, chip-ledger to chip-ledger, level-schedule to level-schedule (levels with values {sb, bb}) and rules-settings to rules-settings; connect the provided game-rules interface to turn-engine's game-rules input. Map the recipe's answers to `seats`, `minimumOpeningBetBigBlinds` and `revealAtRunout`; the chip ledger's `sidePots`, `oddChipRule` and `minimumUnit` settings are set on chip-ledger and decide the pots. Include the web, Apple and Android amount model files in the clients that show a bet slider.
 
-- Select package `clodhub/holdem-rules` version `0.11.0`.
+- Select package `pkg:clod/com.clodhub/holdem-rules` version `0.12.0`.
 - Settings to configure:
   - `seats` (integer; optional; default `9`)
   - `minimumOpeningBetBigBlinds` (integer; optional; default `1`)
-  - `revealAtRunout` (boolean; optional; default `True`)
-- Connect the provided `game-rules` (ae/game-rules 1.0.0) to the consumer that needs it.
-- Supply `card-deck` (ae/card-deck 1.0.0) from the component that provides it.
-- Supply `chip-ledger` (ae/chip-ledger 1.0.0) from the component that provides it.
-- Supply `level-schedule` (ae/level-schedule 1.0.0) from the component that provides it.
-- Supply `hand-ranking` (ae/hand-ranking 1.0.0) from the component that provides it.
-- Supply `rules-settings` (ae/rules-settings 1.0.0) from the component that provides it.
+  - `revealAtRunout` (boolean; optional; default `true`)
+- Connect the provided `game-rules` (com.clodhub/game-rules 1.0.0) to the consumer that needs it.
+- Supply `card-deck` (com.clodhub/card-deck 1.0.0) from the component that provides it.
+- Supply `chip-ledger` (com.clodhub/chip-ledger 1.0.0) from the component that provides it.
+- Supply `level-schedule` (com.clodhub/level-schedule 1.0.0) from the component that provides it.
+- Supply `hand-ranking` (com.clodhub/hand-ranking 1.0.0) from the component that provides it.
+- Supply `rules-settings` (com.clodhub/rules-settings 1.0.0) from the component that provides it.
 - No accounts or keys are needed.
 
 ## For the developer
@@ -25,4 +25,4 @@ From the component directory:
 - `node --test tests/server.test.ts tests/rules.test.ts tests/web.test.ts` (web, required-local; tools: node 26.5)
 - `python3 tests/native.py apple` (apple, platform; tools: python3 3.12, swiftc 6.4)
 - `python3 tests/native.py android` (android, platform; tools: python3 3.12, kotlinc 2.2, java 26.0)
-- `python3 -m aepm review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m aepm fetch clodhub/holdem-rules@VERSION --store STORE --from https://clodhub.com` and runs its suites.
+- `python3 -m clod review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m clod fetch holdem-rules@VERSION --store STORE --from https://clodhub.com` and runs its suites.

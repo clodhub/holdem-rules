@@ -1,10 +1,10 @@
-import ae.holdem.BetKind
-import ae.holdem.BetPresets
-import ae.holdem.BetRange
-import ae.holdem.betIsAllIn
-import ae.holdem.betPresets
-import ae.holdem.betStep
-import ae.holdem.callIsAllIn
+import com.clodhub.holdem.BetKind
+import com.clodhub.holdem.BetPresets
+import com.clodhub.holdem.BetRange
+import com.clodhub.holdem.betIsAllIn
+import com.clodhub.holdem.betPresets
+import com.clodhub.holdem.betStep
+import com.clodhub.holdem.callIsAllIn
 import java.io.File
 
 // Reads the same fixture as the web and Apple checks, with a minimal reader for its fixed shape.

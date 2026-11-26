@@ -1,4 +1,4 @@
-// Types of the game-rules interface for Texas hold'em (ae/game-rules 1.0.0).
+// Types of the game-rules interface for Texas hold'em (com.clodhub/game-rules 1.0.0).
 // A hand is plain data: serialise it, store it, clone it. Every operation returns a new hand.
 
 // Two characters: rank 2-9, T, J, Q, K, A then suit c, d, h, s. Example "As", "Td".
@@ -64,7 +64,7 @@ export type Pot = { amount: number; eligible: string[] };
 
 export type Award = { amount: number; eligible: string[]; winners: { playerId: string; amount: number; handName: string | null }[] };
 
-// ---- the chip-ledger interface as hold'em uses it (ae/chip-ledger 1.0.0) ----
+// ---- the chip-ledger interface as hold'em uses it (com.clodhub/chip-ledger 1.0.0) ----
 
 export type OddChipRule = "clockwise-after-button" | "first-listed";
 
@@ -256,7 +256,7 @@ export type GameRules = {
   chipsInPlay(hand: Hand): number;
 };
 
-// The part of the hand-ranking interface that hold'em reads (ae/hand-ranking 1.0.0).
+// The part of the hand-ranking interface that hold'em reads (com.clodhub/hand-ranking 1.0.0).
 export type HandRankingLike = {
   evaluate(cards: Card[]): { score: number; category: string; ranks: number[]; name: string };
   compareEvaluations(a: { score: number; category: string; ranks: number[]; name: string }, b: { score: number; category: string; ranks: number[]; name: string }): { result: -1 | 0 | 1; decidedBy: string; kickersRead: number };

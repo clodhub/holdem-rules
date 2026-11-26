@@ -1,4 +1,4 @@
-package ae.holdem
+package com.clodhub.holdem
 
 // The betting controls' model: what the amount chooser may offer and what its buttons mean.
 // Pure functions over the `bet` range from the legal actions; no screen code.
